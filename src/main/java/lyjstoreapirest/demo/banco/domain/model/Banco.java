@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "bancos")
@@ -17,7 +14,10 @@ import javax.persistence.Table;
 public class Banco {
     @Id
     @Column( name = "id_bancos")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    @Column( name = "nombre_banco")
+    @Column(
+            name = "nombre_banco"
+    )
     private String nombre;
 }
