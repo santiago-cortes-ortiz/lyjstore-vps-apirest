@@ -2,7 +2,7 @@ package lyjstoreapirest.demo.banco.application;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.banco.domain.model.Banco;
-import lyjstoreapirest.demo.banco.domain.repository.Respositorio;
+import lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco;
 import lyjstoreapirest.demo.banco.domain.service.BancoServicio;
 import org.springframework.stereotype.Service;
 
@@ -13,31 +13,31 @@ import java.util.Optional;
 @AllArgsConstructor
 public class BancoServicioImpl implements BancoServicio {
 
-    private Respositorio respositorio;
+    private RespositorioBanco respositorioBanco;
 
     @Override
     public Long guardar(Banco banco) {
-        Banco bancoAGuardar = respositorio.save(banco);
+        Banco bancoAGuardar = respositorioBanco.save(banco);
         return bancoAGuardar.getId();
     }
 
     @Override
     public Optional<Banco> buscarBancoPorId(Long idBanco)
     {
-        return respositorio.findById(idBanco);
+        return respositorioBanco.findById(idBanco);
     }
 
 
     @Override
     public Optional<Banco> eliminarBancoPorId(Long idBanco)
     {
-        respositorio.deleteById(idBanco);
+        respositorioBanco.deleteById(idBanco);
         return Optional.empty();
     }
 
     @Override
     public List<Banco> listarBancos() {
-        return respositorio.findAll();
+        return respositorioBanco.findAll();
     }
 
 

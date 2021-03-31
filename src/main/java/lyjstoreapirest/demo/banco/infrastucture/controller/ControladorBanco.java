@@ -48,16 +48,16 @@ public class ControladorBanco{
     @PutMapping("/actualizar/{idBanco}")
     public ResponseEntity<Optional<Banco>> actualizarNombre(@RequestBody Banco nuevoBanco, @PathVariable("idBanco") Long idBanco){
         Optional<Banco> bancoABuscar = bancoServicio.buscarBancoPorId(idBanco);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Location","/api/v1/banco/"+idBanco);
         if (bancoABuscar.isEmpty()){
             bancoServicio.guardar(nuevoBanco);
-            HttpHeaders headers = new HttpHeaders();
-            headers.add("Location","/api/v1/banco/"+idBanco);
             return new ResponseEntity<>(headers,HttpStatus.CREATED);
         }
         else{
             bancoABuscar.get().setNombre(nuevoBanco.getNombre());
             bancoServicio.guardar(bancoABuscar.get());
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>(headers,HttpStatus.OK);
         }
     }
 
