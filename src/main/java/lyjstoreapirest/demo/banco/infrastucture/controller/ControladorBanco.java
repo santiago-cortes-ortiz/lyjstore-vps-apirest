@@ -27,7 +27,7 @@ public class ControladorBanco{
         return  new  ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/listar")
     public ResponseEntity<List<Banco>> listarBancos(){
         return new ResponseEntity<>(bancoServicio.listarBancos(),HttpStatus.OK);
     }
@@ -45,17 +45,31 @@ public class ControladorBanco{
         }
     }
 
+    @PutMapping("/actualizar/{idBanco}")
+    public ResponseEntity<Optional<Banco>> actualizarNombre(@RequestBody Banco nuevoBanco, @PathVariable("idBanco") Long idBanco){
+        Optional<Banco> bancoABuscar = bancoServicio.buscarBancoPorId(idBanco);
+        if (bancoABuscar.isEmpty()){
+            bancoServicio.guardar(nuevoBanco);
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Location","/api/v1/banco/"+idBanco);
+            return new ResponseEntity<>(headers,HttpStatus.CREATED);
+        }
+        else{
+            bancoABuscar.get().setNombre(nuevoBanco.getNombre());
+            bancoServicio.guardar(bancoABuscar.get());
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+    }
+
     @DeleteMapping("/{idBanco}")
     public  ResponseEntity<HttpStatus> eliminarBancoPorId(@PathVariable("idBanco") Long id){
         Optional<Banco> bancoToDelete = bancoServicio.buscarBancoPorId(id);
-
         if(bancoToDelete.isEmpty())
         {
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.add("Location", "/api/v1/banco/"+id);
             return new ResponseEntity<>(httpHeaders, HttpStatus.NOT_FOUND);
         }
-
         bancoServicio.eliminarBancoPorId(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
