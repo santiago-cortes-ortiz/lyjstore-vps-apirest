@@ -6,6 +6,7 @@ import lyjstoreapirest.demo.banco.domain.repository.Respositorio;
 import lyjstoreapirest.demo.banco.domain.service.BancoServicio;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,9 +22,23 @@ public class BancoServicioImpl implements BancoServicio {
     }
 
     @Override
-    public Optional<Banco> buscarBancoPorId(Long idBanco) {
-
+    public Optional<Banco> buscarBancoPorId(Long idBanco)
+    {
         return respositorio.findById(idBanco);
-
     }
+
+
+    @Override
+    public Optional<Banco> eliminarBancoPorId(Long idBanco)
+    {
+        respositorio.deleteById(idBanco);
+        return Optional.empty();
+    }
+
+    @Override
+    public List<Banco> listarBancos() {
+        return respositorio.findAll();
+    }
+
+
 }
