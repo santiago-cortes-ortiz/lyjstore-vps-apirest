@@ -60,5 +60,18 @@ public class ControladorCourier {
         }
     }
 
+    @DeleteMapping("/{idCourier}")
+    public  ResponseEntity<HttpStatus> eliminarCourierPorId(@PathVariable("idCourier") Long id){
+        Optional<Courier> courierParaEliminar = courierServicio.buscarCourierPorId(id);
+        if(courierParaEliminar.isEmpty())
+        {
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.add("Location", "/api/v1/courier/"+id);
+            return new ResponseEntity<>(httpHeaders, HttpStatus.NOT_FOUND);
+        }
+        courierServicio.eliminarCourierPorId(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 
 }
