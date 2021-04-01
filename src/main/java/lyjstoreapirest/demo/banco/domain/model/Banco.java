@@ -3,8 +3,10 @@ package lyjstoreapirest.demo.banco.domain.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "bancos")
@@ -20,4 +22,7 @@ public class Banco {
             name = "nombre_banco"
     )
     private String nombre;
+
+   /* @OneToMany(mappedBy = "banco")
+    private List<FormaDePago> formasDePagos;*/
 }

@@ -3,8 +3,10 @@ package lyjstoreapirest.demo.tiposDeCuenta.domain.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tipos_de_cuenta")
@@ -18,4 +20,7 @@ public class TipoDeCuenta {
     private Long id;
     @Column(name = "tipo")
     private String tipo;
+
+    /*@OneToMany(mappedBy = "tipoDeCuenta")
+    private List<FormaDePago> formasDePagos;*/
 }
