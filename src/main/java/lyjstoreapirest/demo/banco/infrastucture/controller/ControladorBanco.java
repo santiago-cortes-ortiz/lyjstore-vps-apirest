@@ -20,7 +20,7 @@ public class ControladorBanco{
     private BancoServicio bancoServicio;
 
     @PostMapping
-    public ResponseEntity<HttpHeaders> guardarBanco(@RequestBody Banco banco){
+    public ResponseEntity<HttpHeaders> adicionarBanco(@RequestBody Banco banco){
         Long idBanco = bancoServicio.guardar(banco);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location","/api/v1/banco/"+idBanco);
