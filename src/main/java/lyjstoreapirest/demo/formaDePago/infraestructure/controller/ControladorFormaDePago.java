@@ -38,7 +38,7 @@ public class ControladorFormaDePago {
         Optional<FormaDePago> formaDePagoABuscar = formaDePagoServicio.buscarFormaDePagoPorId(idFormaDePago);
         if (formaDePagoABuscar.isEmpty()){
             HttpHeaders headers = new HttpHeaders();
-            headers.add("Location","/api/v1/formadepagos"+idFormaDePago);
+            headers.add("Location","/api/v1/formadepagos/"+idFormaDePago);
             return  new ResponseEntity<>(headers,HttpStatus.NOT_FOUND);
         }
         else{
