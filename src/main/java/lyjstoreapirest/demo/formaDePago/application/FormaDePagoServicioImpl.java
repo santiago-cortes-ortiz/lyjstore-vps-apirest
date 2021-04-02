@@ -22,16 +22,18 @@ public class FormaDePagoServicioImpl implements FormaDePagoServicio {
 
     @Override
     public Optional<FormaDePago> buscarFormaDePagoPorId(Long idFormaDePago) {
-        return Optional.empty();
+        return repositorioFormaDePago.findById(idFormaDePago);
     }
 
     @Override
     public Optional<FormaDePago> eliminarFormaDePagoPorId(Long idFormaDePago) {
+        repositorioFormaDePago.deleteById(idFormaDePago);
         return Optional.empty();
     }
 
     @Override
     public List<FormaDePago> listarFormasDePago() {
-        return null;
+        return repositorioFormaDePago.findAll();
     }
+
 }
