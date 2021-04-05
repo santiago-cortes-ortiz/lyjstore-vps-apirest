@@ -61,7 +61,7 @@ public class ControladorRol {
     }
 
     @DeleteMapping("/{idRol}")
-    public  ResponseEntity<HttpStatus> eliminarFormaDePagoPorId(@PathVariable("idRol") Long id){
+    public  ResponseEntity<HttpStatus> eliminarRolPorId(@PathVariable("idRol") Long id){
         Optional<Rol> formaRolAEliminar = rolServicio.buscarRolPorId(id);
         if(formaRolAEliminar.isEmpty())
         {
