@@ -22,7 +22,7 @@ public class CuentaAmazon {
     private String direccion2;
     @Column(name = "codigo_postal")
     private Integer codigoPostal;
-    private Integer telefono;
+    private Double telefono;
     private String ciudad;
     private String estado;
 }

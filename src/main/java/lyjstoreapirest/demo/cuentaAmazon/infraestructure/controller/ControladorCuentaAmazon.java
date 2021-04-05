@@ -3,7 +3,6 @@ package lyjstoreapirest.demo.cuentaAmazon.infraestructure.controller;
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
 import lyjstoreapirest.demo.cuentaAmazon.domain.service.CuentaAmazonServicio;
-import lyjstoreapirest.demo.producto.domain.model.Producto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
