@@ -1,9 +1,9 @@
-package lyjstoreapirest.demo.formaDePago.application;
+package lyjstoreapirest.demo.formaDePago.domain.service;
 
 import lombok.AllArgsConstructor;
+import lyjstoreapirest.demo.formaDePago.application.FormaDePagoServicio;
 import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
 import lyjstoreapirest.demo.formaDePago.domain.repository.RepositorioFormaDePago;
-import lyjstoreapirest.demo.formaDePago.domain.service.FormaDePagoServicio;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

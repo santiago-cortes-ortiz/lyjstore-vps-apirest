@@ -1,4 +1,4 @@
-package lyjstoreapirest.demo.rol.domain.service;
+package lyjstoreapirest.demo.rol.application;
 
 import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
 import lyjstoreapirest.demo.rol.domain.model.Rol;

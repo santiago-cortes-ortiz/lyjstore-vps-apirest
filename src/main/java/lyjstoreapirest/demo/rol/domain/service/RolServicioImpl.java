@@ -1,10 +1,9 @@
-package lyjstoreapirest.demo.rol.application;
+package lyjstoreapirest.demo.rol.domain.service;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
+import lyjstoreapirest.demo.rol.application.RolServicio;
 import lyjstoreapirest.demo.rol.domain.model.Rol;
 import lyjstoreapirest.demo.rol.domain.repository.RepositorioRol;
-import lyjstoreapirest.demo.rol.domain.service.RolServicio;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

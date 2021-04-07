@@ -1,9 +1,9 @@
-package lyjstoreapirest.demo.banco.application;
+package lyjstoreapirest.demo.banco.domain.service;
 
 import lombok.AllArgsConstructor;
+import lyjstoreapirest.demo.banco.application.BancoServicio;
 import lyjstoreapirest.demo.banco.domain.model.Banco;
 import lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco;
-import lyjstoreapirest.demo.banco.domain.service.BancoServicio;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

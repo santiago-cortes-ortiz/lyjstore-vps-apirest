@@ -1,9 +1,9 @@
-package lyjstoreapirest.demo.cuentaAzure.application;
+package lyjstoreapirest.demo.cuentaAzure.domain.service;
 
 import lombok.AllArgsConstructor;
+import lyjstoreapirest.demo.cuentaAzure.application.CuentaAzureServicio;
 import lyjstoreapirest.demo.cuentaAzure.domain.model.CuentaAzure;
 import lyjstoreapirest.demo.cuentaAzure.domain.repository.RepositorioCuentaAzure;
-import lyjstoreapirest.demo.cuentaAzure.domain.service.CuentaAzureServicio;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

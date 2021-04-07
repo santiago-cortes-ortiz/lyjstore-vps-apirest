@@ -1,10 +1,8 @@
 package lyjstoreapirest.demo.formaDePago.infraestructure.controller;
 
-import com.fasterxml.jackson.annotation.OptBoolean;
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
-import lyjstoreapirest.demo.formaDePago.domain.service.FormaDePagoServicio;
-import lyjstoreapirest.demo.tiposDeCuenta.domain.model.TipoDeCuenta;
+import lyjstoreapirest.demo.formaDePago.application.FormaDePagoServicio;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

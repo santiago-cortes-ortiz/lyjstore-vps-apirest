@@ -1,9 +1,8 @@
 package lyjstoreapirest.demo.tiposDeCuenta.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.courier.domain.model.Courier;
 import lyjstoreapirest.demo.tiposDeCuenta.domain.model.TipoDeCuenta;
-import lyjstoreapirest.demo.tiposDeCuenta.domain.service.TiposDeCuentaServicio;
+import lyjstoreapirest.demo.tiposDeCuenta.application.TiposDeCuentaServicio;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

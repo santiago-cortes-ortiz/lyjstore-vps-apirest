@@ -1,4 +1,4 @@
-package lyjstoreapirest.demo.cuentaAmazon.domain.service;
+package lyjstoreapirest.demo.cuentaAmazon.application;
 
 import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
 

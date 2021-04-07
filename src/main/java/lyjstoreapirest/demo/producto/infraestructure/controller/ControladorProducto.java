@@ -2,8 +2,7 @@ package lyjstoreapirest.demo.producto.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.producto.domain.model.Producto;
-import lyjstoreapirest.demo.producto.domain.service.ProductoServicio;
-import lyjstoreapirest.demo.rol.domain.model.Rol;
+import lyjstoreapirest.demo.producto.application.ProductoServicio;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

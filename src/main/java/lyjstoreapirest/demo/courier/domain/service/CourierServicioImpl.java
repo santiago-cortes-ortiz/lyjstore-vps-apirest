@@ -1,9 +1,9 @@
-package lyjstoreapirest.demo.courier.application;
+package lyjstoreapirest.demo.courier.domain.service;
 
 import lombok.AllArgsConstructor;
+import lyjstoreapirest.demo.courier.application.CourierServicio;
 import lyjstoreapirest.demo.courier.domain.model.Courier;
 import lyjstoreapirest.demo.courier.domain.repository.RepositorioCourier;
-import lyjstoreapirest.demo.courier.domain.service.CourierServicio;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

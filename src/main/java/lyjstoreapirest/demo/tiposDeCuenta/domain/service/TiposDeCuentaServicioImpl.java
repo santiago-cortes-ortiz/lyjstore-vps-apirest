@@ -1,9 +1,9 @@
-package lyjstoreapirest.demo.tiposDeCuenta.application;
+package lyjstoreapirest.demo.tiposDeCuenta.domain.service;
 
 import lombok.AllArgsConstructor;
+import lyjstoreapirest.demo.tiposDeCuenta.application.TiposDeCuentaServicio;
 import lyjstoreapirest.demo.tiposDeCuenta.domain.model.TipoDeCuenta;
 import lyjstoreapirest.demo.tiposDeCuenta.domain.repository.RepositorioTiposDeCuenta;
-import lyjstoreapirest.demo.tiposDeCuenta.domain.service.TiposDeCuentaServicio;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
