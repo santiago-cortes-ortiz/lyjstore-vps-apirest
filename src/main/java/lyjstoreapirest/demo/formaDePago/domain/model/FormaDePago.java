@@ -14,7 +14,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 public class FormaDePago {
-
     @Id
     @Column(name = "metodo_banco_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
