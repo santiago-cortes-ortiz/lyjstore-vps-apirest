@@ -1,4 +1,4 @@
-package lyjstoreapirest.demo.cuentaAzure.application;
+package lyjstoreapirest.demo.cuentaAzure.domain.service;
 
 
 import lyjstoreapirest.demo.cuentaAzure.domain.model.CuentaAzure;

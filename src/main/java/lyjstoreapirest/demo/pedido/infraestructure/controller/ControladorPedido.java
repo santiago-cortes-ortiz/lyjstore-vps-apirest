@@ -1,9 +1,7 @@
 package lyjstoreapirest.demo.pedido.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
-import lyjstoreapirest.demo.cuentaAzure.domain.model.CuentaAzure;
-import lyjstoreapirest.demo.pedido.application.PedidoServicio;
+import lyjstoreapirest.demo.pedido.domain.service.PedidoServicio;
 import lyjstoreapirest.demo.pedido.domain.model.Pedido;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

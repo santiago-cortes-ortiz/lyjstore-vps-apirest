@@ -1,9 +1,8 @@
 package lyjstoreapirest.demo.cuentaAzure.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.cuentaAzure.application.CuentaAzureServicio;
+import lyjstoreapirest.demo.cuentaAzure.domain.service.CuentaAzureServicio;
 import lyjstoreapirest.demo.cuentaAzure.domain.model.CuentaAzure;
-import lyjstoreapirest.demo.producto.domain.model.Producto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

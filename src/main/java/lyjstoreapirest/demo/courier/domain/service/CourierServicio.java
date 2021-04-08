@@ -1,4 +1,4 @@
-package lyjstoreapirest.demo.courier.application;
+package lyjstoreapirest.demo.courier.domain.service;
 
 import lyjstoreapirest.demo.banco.domain.model.Banco;
 import lyjstoreapirest.demo.courier.domain.model.Courier;

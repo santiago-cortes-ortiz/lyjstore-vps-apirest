@@ -1,4 +1,4 @@
-package lyjstoreapirest.demo.pedido.application;
+package lyjstoreapirest.demo.pedido.domain.service;
 
 import lyjstoreapirest.demo.cuentaAzure.domain.model.CuentaAzure;
 import lyjstoreapirest.demo.pedido.domain.model.Pedido;

@@ -2,7 +2,7 @@ package lyjstoreapirest.demo.courier.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.courier.domain.model.Courier;
-import lyjstoreapirest.demo.courier.application.CourierServicio;
+import lyjstoreapirest.demo.courier.domain.service.CourierServicio;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

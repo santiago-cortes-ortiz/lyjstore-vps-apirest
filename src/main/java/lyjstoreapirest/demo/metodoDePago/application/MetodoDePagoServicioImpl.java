@@ -1,7 +1,7 @@
-package lyjstoreapirest.demo.metodoDePago.domain.service;
+package lyjstoreapirest.demo.metodoDePago.application;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.metodoDePago.application.MetodoDePagoServicio;
+import lyjstoreapirest.demo.metodoDePago.domain.service.MetodoDePagoServicio;
 import lyjstoreapirest.demo.metodoDePago.domain.model.MetodoPago;
 import lyjstoreapirest.demo.metodoDePago.domain.repository.RepositorioMetodoDePago;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
-package lyjstoreapirest.demo.producto.domain.service;
+package lyjstoreapirest.demo.producto.application;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.producto.application.ProductoServicio;
+import lyjstoreapirest.demo.producto.domain.service.ProductoServicio;
 import lyjstoreapirest.demo.producto.domain.model.Producto;
 import lyjstoreapirest.demo.producto.domain.repository.RespositorioProducto;
 import org.springframework.stereotype.Service;

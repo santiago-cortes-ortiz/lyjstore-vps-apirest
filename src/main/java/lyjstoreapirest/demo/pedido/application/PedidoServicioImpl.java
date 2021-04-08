@@ -1,7 +1,7 @@
-package lyjstoreapirest.demo.pedido.domain.service;
+package lyjstoreapirest.demo.pedido.application;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.pedido.application.PedidoServicio;
+import lyjstoreapirest.demo.pedido.domain.service.PedidoServicio;
 import lyjstoreapirest.demo.pedido.domain.model.Pedido;
 import lyjstoreapirest.demo.pedido.domain.repository.RepositorioPedido;
 import org.springframework.stereotype.Service;

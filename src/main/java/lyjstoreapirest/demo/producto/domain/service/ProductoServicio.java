@@ -1,4 +1,4 @@
-package lyjstoreapirest.demo.producto.application;
+package lyjstoreapirest.demo.producto.domain.service;
 
 import lyjstoreapirest.demo.producto.domain.model.Producto;
 import lyjstoreapirest.demo.rol.domain.model.Rol;

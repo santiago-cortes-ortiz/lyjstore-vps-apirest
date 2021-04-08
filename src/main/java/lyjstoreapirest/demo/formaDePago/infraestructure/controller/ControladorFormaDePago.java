@@ -2,7 +2,7 @@ package lyjstoreapirest.demo.formaDePago.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
-import lyjstoreapirest.demo.formaDePago.application.FormaDePagoServicio;
+import lyjstoreapirest.demo.formaDePago.domain.service.FormaDePagoServicio;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

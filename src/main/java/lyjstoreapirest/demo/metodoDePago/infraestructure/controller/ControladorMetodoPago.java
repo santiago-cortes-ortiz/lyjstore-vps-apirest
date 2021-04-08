@@ -1,9 +1,8 @@
 package lyjstoreapirest.demo.metodoDePago.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.metodoDePago.application.MetodoDePagoServicio;
+import lyjstoreapirest.demo.metodoDePago.domain.service.MetodoDePagoServicio;
 import lyjstoreapirest.demo.metodoDePago.domain.model.MetodoPago;
-import lyjstoreapirest.demo.pedido.domain.model.Pedido;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -2,7 +2,7 @@ package lyjstoreapirest.demo.banco.infrastucture.controller;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.banco.domain.model.Banco;
-import lyjstoreapirest.demo.banco.application.BancoServicio;
+import lyjstoreapirest.demo.banco.domain.service.BancoServicio;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

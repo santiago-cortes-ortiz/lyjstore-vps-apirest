@@ -1,4 +1,4 @@
-package lyjstoreapirest.demo.banco.application;
+package lyjstoreapirest.demo.banco.domain.service;
 
 import lyjstoreapirest.demo.banco.domain.model.Banco;
 

@@ -1,4 +1,4 @@
-package lyjstoreapirest.demo.tiposDeCuenta.application;
+package lyjstoreapirest.demo.tiposDeCuenta.domain.service;
 
 import lyjstoreapirest.demo.tiposDeCuenta.domain.model.TipoDeCuenta;
 

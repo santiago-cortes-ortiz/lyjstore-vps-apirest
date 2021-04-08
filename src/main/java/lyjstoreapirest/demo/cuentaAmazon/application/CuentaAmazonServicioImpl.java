@@ -1,7 +1,7 @@
-package lyjstoreapirest.demo.cuentaAmazon.domain.service;
+package lyjstoreapirest.demo.cuentaAmazon.application;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.cuentaAmazon.application.CuentaAmazonServicio;
+import lyjstoreapirest.demo.cuentaAmazon.domain.service.CuentaAmazonServicio;
 import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
 import lyjstoreapirest.demo.cuentaAmazon.domain.repository.RepositorioCuentaAmazon;
 import org.springframework.stereotype.Service;

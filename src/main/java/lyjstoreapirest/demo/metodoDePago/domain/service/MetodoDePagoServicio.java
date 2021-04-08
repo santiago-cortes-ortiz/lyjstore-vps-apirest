@@ -1,4 +1,4 @@
-package lyjstoreapirest.demo.metodoDePago.application;
+package lyjstoreapirest.demo.metodoDePago.domain.service;
 
 import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
 import lyjstoreapirest.demo.metodoDePago.domain.model.MetodoPago;

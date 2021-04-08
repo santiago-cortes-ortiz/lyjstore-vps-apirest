@@ -2,7 +2,7 @@ package lyjstoreapirest.demo.rol.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.rol.domain.model.Rol;
-import lyjstoreapirest.demo.rol.application.RolServicio;
+import lyjstoreapirest.demo.rol.domain.service.RolServicio;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
