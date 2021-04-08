@@ -27,7 +27,6 @@ public class BancoServicioImpl implements BancoServicio {
         return respositorioBanco.findById(idBanco);
     }
 
-
     @Override
     public Optional<Banco> eliminarBancoPorId(Long idBanco)
     {

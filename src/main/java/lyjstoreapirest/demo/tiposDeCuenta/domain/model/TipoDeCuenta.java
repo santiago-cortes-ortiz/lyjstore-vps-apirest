@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class TipoDeCuenta {
+public class TipoDeCuenta implements Serializable {
+    private static final long serialVersionUID = 1929590116853413616L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_tipo_de_cuenta")

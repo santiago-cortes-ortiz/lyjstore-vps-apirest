@@ -5,13 +5,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "cuentas_amazon")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CuentaAmazon {
+public class CuentaAmazon implements Serializable {
+
+    private static final long serialVersionUID = -605694708703918022L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cuenta")

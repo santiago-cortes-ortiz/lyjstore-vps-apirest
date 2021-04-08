@@ -1,6 +1,7 @@
 package lyjstoreapirest.demo.metodoDePago.domain.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,7 @@ import lyjstoreapirest.demo.banco.domain.model.Banco;
 import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
@@ -15,7 +17,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class MetodoPago {
+public class MetodoPago implements Serializable {
+
+    private static final long serialVersionUID = 8126620823126118020L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,11 +38,11 @@ public class MetodoPago {
     @Column(name = "bancosid_bancos")
     private Long idBanco;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "fk_cuentas_amazonid_cuenta",updatable = false,insertable = false)
     private CuentaAmazon cuentaAmazon;
 
-    @OneToOne
+    @OneToOne()
     @JoinColumn(name = "bancosid_bancos",insertable = false,updatable = false)
     private Banco banco;
 

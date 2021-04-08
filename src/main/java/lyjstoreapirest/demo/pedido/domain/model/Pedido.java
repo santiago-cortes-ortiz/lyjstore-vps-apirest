@@ -7,6 +7,7 @@ import lyjstoreapirest.demo.courier.domain.model.Courier;
 import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -16,8 +17,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Pedido {
+public class Pedido implements Serializable {
 
+    private static final long serialVersionUID = -4777046203696545729L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pedido")

@@ -40,6 +40,7 @@ public class ControladorMetodoPago {
             return  new ResponseEntity<>(headers,HttpStatus.NOT_FOUND);
         }
         else{
+            metodoPagoABuscar.get().setCuentaAmazon(null);
             return new ResponseEntity<>(metodoPagoABuscar.get(),HttpStatus.OK);
         }
     }
