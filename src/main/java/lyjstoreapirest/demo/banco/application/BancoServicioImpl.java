@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.banco.domain.service.BancoServicio;
 import lyjstoreapirest.demo.banco.domain.model.Banco;
 import lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco;
-import org.springframework.stereotype.Service;
+import lyjstoreapirest.demo.general_service.Servicio;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Servicio
 @AllArgsConstructor
 public class BancoServicioImpl implements BancoServicio {
 

@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.courier.domain.service.CourierServicio;
 import lyjstoreapirest.demo.courier.domain.model.Courier;
 import lyjstoreapirest.demo.courier.domain.repository.RepositorioCourier;
-import org.springframework.stereotype.Service;
+import lyjstoreapirest.demo.general_service.Servicio;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Servicio
 @AllArgsConstructor
 public class CourierServicioImpl implements CourierServicio {
 

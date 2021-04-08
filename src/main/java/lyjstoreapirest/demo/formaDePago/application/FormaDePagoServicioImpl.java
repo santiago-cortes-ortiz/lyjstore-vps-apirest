@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.formaDePago.domain.service.FormaDePagoServicio;
 import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
 import lyjstoreapirest.demo.formaDePago.domain.repository.RepositorioFormaDePago;
-import org.springframework.stereotype.Service;
+import lyjstoreapirest.demo.general_service.Servicio;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Servicio
 @AllArgsConstructor
 public class FormaDePagoServicioImpl implements FormaDePagoServicio {
 

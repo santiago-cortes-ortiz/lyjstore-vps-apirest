@@ -10,4 +10,9 @@ public class LyjstoreRestfulApplication {
         SpringApplication.run(LyjstoreRestfulApplication.class, args);
     }
 
+    /*
+    *
+    * https://howtodoinjava.com/spring5/webmvc/spring-mvc-cors-configuration/
+    *
+    * */
 }

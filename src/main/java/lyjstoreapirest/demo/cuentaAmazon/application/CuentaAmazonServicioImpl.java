@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.cuentaAmazon.domain.service.CuentaAmazonServicio;
 import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
 import lyjstoreapirest.demo.cuentaAmazon.domain.repository.RepositorioCuentaAmazon;
-import org.springframework.stereotype.Service;
+import lyjstoreapirest.demo.general_service.Servicio;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Servicio
 @AllArgsConstructor
 public class CuentaAmazonServicioImpl implements CuentaAmazonServicio {
 

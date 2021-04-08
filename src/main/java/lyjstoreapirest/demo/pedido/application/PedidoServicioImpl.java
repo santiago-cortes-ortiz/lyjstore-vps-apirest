@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.pedido.domain.service.PedidoServicio;
 import lyjstoreapirest.demo.pedido.domain.model.Pedido;
 import lyjstoreapirest.demo.pedido.domain.repository.RepositorioPedido;
-import org.springframework.stereotype.Service;
+import lyjstoreapirest.demo.general_service.Servicio;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Servicio
 @AllArgsConstructor
 public class PedidoServicioImpl implements PedidoServicio {
 

@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.producto.domain.service.ProductoServicio;
 import lyjstoreapirest.demo.producto.domain.model.Producto;
 import lyjstoreapirest.demo.producto.domain.repository.RespositorioProducto;
-import org.springframework.stereotype.Service;
+import lyjstoreapirest.demo.general_service.Servicio;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Servicio
 @AllArgsConstructor
 public class ProductoServicioImpl implements ProductoServicio {
 

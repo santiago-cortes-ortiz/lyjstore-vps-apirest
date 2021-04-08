@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.cuentaAzure.domain.service.CuentaAzureServicio;
 import lyjstoreapirest.demo.cuentaAzure.domain.model.CuentaAzure;
 import lyjstoreapirest.demo.cuentaAzure.domain.repository.RepositorioCuentaAzure;
-import org.springframework.stereotype.Service;
+import lyjstoreapirest.demo.general_service.Servicio;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Servicio
 @AllArgsConstructor
 public class CuentaAzureServicioImpl implements CuentaAzureServicio {
 
