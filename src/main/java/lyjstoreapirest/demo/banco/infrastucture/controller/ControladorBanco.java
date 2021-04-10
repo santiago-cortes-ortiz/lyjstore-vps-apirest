@@ -2,7 +2,7 @@ package lyjstoreapirest.demo.banco.infrastucture.controller;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.banco.domain.model.Banco;
-import lyjstoreapirest.demo.banco.domain.service.BancoServicio;
+import lyjstoreapirest.demo.banco.domain.service.BancoCrud;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +16,11 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ControladorBanco{
 
-    private BancoServicio bancoServicio;
+    private BancoCrud bancoCrud;
 
     @PostMapping
     public ResponseEntity<HttpHeaders> adicionarBanco(@RequestBody Banco banco){
-        Long idBanco = bancoServicio.guardar(banco);
+        Long idBanco = bancoCrud.guardar(banco);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location","/api/v1/banco/"+idBanco);
         return  new  ResponseEntity<>(headers, HttpStatus.CREATED);
@@ -28,12 +28,12 @@ public class ControladorBanco{
 
     @GetMapping("/listar")
     public ResponseEntity<List<Banco>> listarBancos(){
-        return new ResponseEntity<>(bancoServicio.listarBancos(),HttpStatus.OK);
+        return new ResponseEntity<>(bancoCrud.listarBancos(),HttpStatus.OK);
     }
 
     @GetMapping("/{idBanco}")
     public ResponseEntity<Banco> buscarPorId(@PathVariable("idBanco") Long idBanco){
-        Optional<Banco> bancos = bancoServicio.buscarBancoPorId(idBanco);
+        Optional<Banco> bancos = bancoCrud.buscarBancoPorId(idBanco);
         if (bancos.isEmpty()){
             HttpHeaders headers = new HttpHeaders();
             headers.add("Location","/api/v1/banco/"+idBanco);
@@ -46,16 +46,16 @@ public class ControladorBanco{
 
     @PutMapping("/actualizar/{idBanco}")
     public ResponseEntity<Optional<Banco>> actualizarNombre(@RequestBody Banco nuevoBanco, @PathVariable("idBanco") Long idBanco){
-        Optional<Banco> bancoABuscar = bancoServicio.buscarBancoPorId(idBanco);
+        Optional<Banco> bancoABuscar = bancoCrud.buscarBancoPorId(idBanco);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location","/api/v1/banco/"+idBanco);
         if (bancoABuscar.isEmpty()){
-            bancoServicio.guardar(nuevoBanco);
+            bancoCrud.guardar(nuevoBanco);
             return new ResponseEntity<>(headers,HttpStatus.CREATED);
         }
         else{
             bancoABuscar.get().setNombre(nuevoBanco.getNombre());
-            bancoServicio.guardar(bancoABuscar.get());
+            bancoCrud.guardar(bancoABuscar.get());
             return new ResponseEntity<>(headers,HttpStatus.OK);
         }
     }
@@ -63,14 +63,14 @@ public class ControladorBanco{
 
     @DeleteMapping("/{idBanco}")
     public  ResponseEntity<HttpStatus> eliminarBancoPorId(@PathVariable("idBanco") Long id){
-        Optional<Banco> bancoToDelete = bancoServicio.buscarBancoPorId(id);
+        Optional<Banco> bancoToDelete = bancoCrud.buscarBancoPorId(id);
         if(bancoToDelete.isEmpty())
         {
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.add("Location", "/api/v1/banco/"+id);
             return new ResponseEntity<>(httpHeaders, HttpStatus.NOT_FOUND);
         }
-        bancoServicio.eliminarBancoPorId(id);
+        bancoCrud.eliminarBancoPorId(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

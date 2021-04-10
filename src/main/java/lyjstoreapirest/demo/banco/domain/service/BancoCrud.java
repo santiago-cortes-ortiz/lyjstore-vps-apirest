@@ -5,7 +5,7 @@ import lyjstoreapirest.demo.banco.domain.model.Banco;
 import java.util.List;
 import java.util.Optional;
 
-public interface BancoServicio {
+public interface BancoCrud {
 
     Long guardar(Banco banco);
 
