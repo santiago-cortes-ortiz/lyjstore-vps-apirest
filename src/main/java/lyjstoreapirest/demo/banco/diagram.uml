@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="437.75000000000006" y="90.0">lyjstoreapirest.demo.banco.domain.service.BancoCrud</node>
+    <node x="189.0" y="90.0">lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco</node>
+    <node x="0.0" y="90.0">lyjstoreapirest.demo.banco.domain.repository.JpaMetodosBanco</node>
+    <node x="19.500000000000057" y="196.0">lyjstoreapirest.demo.banco.infrastucture.repository.RespositorioBancoImpl</node>
+    <node x="288.25" y="0.0">lyjstoreapirest.demo.banco.domain.model.Banco</node>
+    <node x="471.5" y="170.0">lyjstoreapirest.demo.banco.infrastucture.controller.ControladorBanco</node>
+    <node x="299.5" y="170.0">lyjstoreapirest.demo.banco.application.BancoCrudImpl</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="lyjstoreapirest.demo.banco.infrastucture.repository.RespositorioBancoImpl" target="lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco">
+      <point x="71.99999999999994" y="-15.0" />
+      <point x="231.5" y="145.0" />
+      <point x="235.0" y="145.0" />
+      <point x="-46.0" y="15.0" />
+    </edge>
+    <edge source="lyjstoreapirest.demo.banco.domain.repository.JpaMetodosBanco" target="lyjstoreapirest.demo.banco.domain.model.Banco">
+      <point x="0.0" y="-15.0" />
+      <point x="84.0" y="50.0" />
+      <point x="295.5833333333333" y="50.0" />
+      <point x="-36.666666666666686" y="15.0" />
+    </edge>
+    <edge source="lyjstoreapirest.demo.banco.application.BancoCrudImpl" target="lyjstoreapirest.demo.banco.domain.service.BancoCrud">
+      <point x="50.666666666666686" y="-15.0" />
+      <point x="426.1666666666667" y="145.0" />
+      <point x="467.75000000000006" y="145.0" />
+      <point x="-30.0" y="15.0" />
+    </edge>
+    <edge source="lyjstoreapirest.demo.banco.application.BancoCrudImpl" target="lyjstoreapirest.demo.banco.domain.model.Banco">
+      <point x="0.0" y="-15.0" />
+      <point x="375.5" y="145.0" />
+      <point x="383.5" y="145.0" />
+      <point x="383.5" y="70.0" />
+      <point x="339.5833333333333" y="70.0" />
+      <point x="7.333333333333314" y="15.0" />
+    </edge>
+    <edge source="lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco" target="lyjstoreapirest.demo.banco.domain.model.Banco">
+      <point x="0.0" y="-15.0" />
+      <point x="281.0" y="70.0" />
+      <point x="324.9166666666667" y="70.0" />
+      <point x="-7.333333333333314" y="15.0" />
+    </edge>
+    <edge source="lyjstoreapirest.demo.banco.infrastucture.repository.RespositorioBancoImpl" target="lyjstoreapirest.demo.banco.domain.repository.JpaMetodosBanco">
+      <point x="-72.00000000000006" y="-15.0" />
+      <point x="87.5" y="145.0" />
+      <point x="84.0" y="145.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="lyjstoreapirest.demo.banco.domain.service.BancoCrud" target="lyjstoreapirest.demo.banco.domain.model.Banco">
+      <point x="0.0" y="-15.0" />
+      <point x="497.75000000000006" y="60.0" />
+      <point x="354.25" y="60.0" />
+      <point x="22.0" y="15.0" />
+    </edge>
+    <edge source="lyjstoreapirest.demo.banco.application.BancoCrudImpl" target="lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco">
+      <point x="-50.66666666666666" y="-15.0" />
+      <point x="324.8333333333333" y="145.0" />
+      <point x="327.0" y="145.0" />
+      <point x="46.0" y="15.0" />
+    </edge>
+    <edge source="lyjstoreapirest.demo.banco.infrastucture.repository.RespositorioBancoImpl" target="lyjstoreapirest.demo.banco.domain.model.Banco">
+      <point x="-5.6843418860808015E-14" y="-15.0" />
+      <point x="159.5" y="145.0" />
+      <point x="178.5" y="145.0" />
+      <point x="178.5" y="60.0" />
+      <point x="310.25" y="60.0" />
+      <point x="-22.0" y="15.0" />
+    </edge>
+    <edge source="lyjstoreapirest.demo.banco.infrastucture.controller.ControladorBanco" target="lyjstoreapirest.demo.banco.domain.model.Banco">
+      <point x="44.0" y="-15.0" />
+      <point x="603.5" y="145.0" />
+      <point x="577.2583333333334" y="145.0" />
+      <point x="577.2583333333334" y="50.0" />
+      <point x="368.91666666666663" y="50.0" />
+      <point x="36.66666666666663" y="15.0" />
+    </edge>
+    <edge source="lyjstoreapirest.demo.banco.infrastucture.controller.ControladorBanco" target="lyjstoreapirest.demo.banco.domain.service.BancoCrud">
+      <point x="-44.0" y="-15.0" />
+      <point x="515.5" y="145.0" />
+      <point x="527.75" y="145.0" />
+      <point x="30.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="263.0" y="76.5" />
+  <SelectedNodes>
+    <node>lyjstoreapirest.demo.banco.infrastucture.repository.RespositorioBancoImpl</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
