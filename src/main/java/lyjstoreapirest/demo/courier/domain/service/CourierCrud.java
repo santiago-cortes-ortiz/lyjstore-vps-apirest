@@ -6,7 +6,7 @@ import lyjstoreapirest.demo.courier.domain.model.Courier;
 import java.util.List;
 import java.util.Optional;
 
-public interface CourierServicio {
+public interface CourierCrud {
 
     Long guardar(Courier courier);
 

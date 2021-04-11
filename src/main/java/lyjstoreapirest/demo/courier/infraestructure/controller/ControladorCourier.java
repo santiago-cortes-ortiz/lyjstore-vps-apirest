@@ -2,7 +2,7 @@ package lyjstoreapirest.demo.courier.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.courier.domain.model.Courier;
-import lyjstoreapirest.demo.courier.domain.service.CourierServicio;
+import lyjstoreapirest.demo.courier.domain.service.CourierCrud;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +15,11 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ControladorCourier {
 
-    private CourierServicio courierServicio;
+    private CourierCrud courierCrud;
 
     @PostMapping
     public ResponseEntity<HttpHeaders> adicionarCourier(@RequestBody Courier courier){
-        Long idCourier = courierServicio.guardar(courier);
+        Long idCourier = courierCrud.guardar(courier);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location","/api/v1/courier/"+idCourier);
         return  new  ResponseEntity<>(headers, HttpStatus.CREATED);
@@ -27,12 +27,12 @@ public class ControladorCourier {
 
     @GetMapping("/listar")
     public ResponseEntity<List<Courier>> listarCouriers(){
-        return new ResponseEntity<>(courierServicio.listarCouriers(),HttpStatus.OK);
+        return new ResponseEntity<>(courierCrud.listarCouriers(),HttpStatus.OK);
     }
 
     @GetMapping("/{idCourier}")
     public ResponseEntity<Courier> buscarCourierPorId(@PathVariable("idCourier") Long idCourier){
-        Optional<Courier> courier = courierServicio.buscarCourierPorId(idCourier);
+        Optional<Courier> courier = courierCrud.buscarCourierPorId(idCourier);
         if (courier.isEmpty()){
             HttpHeaders headers = new HttpHeaders();
             headers.add("Location","/api/v1/courier/"+idCourier);
@@ -44,30 +44,30 @@ public class ControladorCourier {
     }
     @PutMapping("/actualizar/{idCourier}")
     public ResponseEntity<Optional<Courier>> actualizarNombre(@RequestBody Courier nuevoCourier, @PathVariable("idCourier") Long idCourier){
-        Optional<Courier> courierABuscar = courierServicio.buscarCourierPorId(idCourier);
+        Optional<Courier> courierABuscar = courierCrud.buscarCourierPorId(idCourier);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location","/api/v1/courier/"+idCourier);
         if (courierABuscar.isEmpty()){
-            courierServicio.guardar(nuevoCourier);
+            courierCrud.guardar(nuevoCourier);
             return new ResponseEntity<>(headers,HttpStatus.CREATED);
         }
         else{
             courierABuscar.get().setNombre(nuevoCourier.getNombre());
-            courierServicio.guardar(courierABuscar.get());
+            courierCrud.guardar(courierABuscar.get());
             return new ResponseEntity<>(headers,HttpStatus.OK);
         }
     }
 
     @DeleteMapping("/{idCourier}")
     public  ResponseEntity<HttpStatus> eliminarCourierPorId(@PathVariable("idCourier") Long id){
-        Optional<Courier> courierParaEliminar = courierServicio.buscarCourierPorId(id);
+        Optional<Courier> courierParaEliminar = courierCrud.buscarCourierPorId(id);
         if(courierParaEliminar.isEmpty())
         {
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.add("Location", "/api/v1/courier/"+id);
             return new ResponseEntity<>(httpHeaders, HttpStatus.NOT_FOUND);
         }
-        courierServicio.eliminarCourierPorId(id);
+        courierCrud.eliminarCourierPorId(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

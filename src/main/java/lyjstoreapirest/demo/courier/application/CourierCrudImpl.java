@@ -1,7 +1,7 @@
 package lyjstoreapirest.demo.courier.application;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.courier.domain.service.CourierServicio;
+import lyjstoreapirest.demo.courier.domain.service.CourierCrud;
 import lyjstoreapirest.demo.courier.domain.model.Courier;
 import lyjstoreapirest.demo.courier.domain.repository.RepositorioCourier;
 import lyjstoreapirest.demo.general_service.Servicio;
@@ -11,29 +11,28 @@ import java.util.Optional;
 
 @Servicio
 @AllArgsConstructor
-public class CourierServicioImpl implements CourierServicio {
+public class CourierCrudImpl implements CourierCrud {
 
     private RepositorioCourier repositorioCourier;
 
     @Override
     public Long guardar(Courier courier) {
-        Courier courierAGuardar = repositorioCourier.save(courier);
-        return courierAGuardar.getId();
+        Long courierAGuardar = repositorioCourier.guardar(courier);
+        return courierAGuardar;
     }
 
     @Override
     public Optional<Courier> buscarCourierPorId(Long idCourier) {
-        return repositorioCourier.findById(idCourier);
+        return repositorioCourier.buscarCourierPorId(idCourier);
     }
 
     @Override
     public Optional<Courier> eliminarCourierPorId(Long idCourier) {
-        repositorioCourier.deleteById(idCourier);
-        return Optional.empty();
+        return repositorioCourier.eliminarCourierPorId(idCourier);
     }
 
     @Override
     public List<Courier> listarCouriers() {
-        return repositorioCourier.findAll();
+        return repositorioCourier.listarCouriers();
     }
 }

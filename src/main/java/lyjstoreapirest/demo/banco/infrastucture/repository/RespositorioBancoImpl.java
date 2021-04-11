@@ -2,7 +2,7 @@ package lyjstoreapirest.demo.banco.infrastucture.repository;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.banco.domain.model.Banco;
-import lyjstoreapirest.demo.banco.domain.repository.JpaMethods;
+import lyjstoreapirest.demo.banco.domain.repository.JpaMetodosBanco;
 import lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco;
 import org.springframework.stereotype.Repository;
 
@@ -13,26 +13,26 @@ import java.util.Optional;
 @AllArgsConstructor
 public class RespositorioBancoImpl implements RespositorioBanco {
 
-    private JpaMethods jpaMethods;
+    private JpaMetodosBanco jpaMetodosBanco;
 
     @Override
     public Long guardar(Banco banco) {
-        return jpaMethods.save(banco).getId();
+        return jpaMetodosBanco.save(banco).getId();
     }
 
     @Override
     public Optional<Banco> buscarBancoPorId(Long idBanco) {
-        return jpaMethods.findById(idBanco);
+        return jpaMetodosBanco.findById(idBanco);
     }
 
     @Override
     public Optional<Banco> eliminarBancoPorId(Long idBanco) {
-        jpaMethods.deleteById(idBanco);
+        jpaMetodosBanco.deleteById(idBanco);
         return Optional.empty();
     }
 
     @Override
     public List<Banco> listarBancos() {
-        return jpaMethods.findAll();
+        return jpaMetodosBanco.findAll();
     }
 }
