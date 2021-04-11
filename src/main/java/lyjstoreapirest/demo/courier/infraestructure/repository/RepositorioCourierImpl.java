@@ -4,12 +4,13 @@ import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.courier.domain.model.Courier;
 import lyjstoreapirest.demo.courier.domain.repository.JpaMetodosCourier;
 import lyjstoreapirest.demo.courier.domain.repository.RepositorioCourier;
+import lyjstoreapirest.demo.general_service.Repositorio;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Repositorio
 @AllArgsConstructor
 public class RepositorioCourierImpl implements RepositorioCourier {
 
