@@ -33,8 +33,8 @@ public class ControladorBanco{
     }
 
     @GetMapping("/{idBanco}")
-    public ResponseEntity<Banco> buscarPorId(@PathVariable("idBanco") Long idBanco){
-        Optional<Banco> bancos = bancoCrud.buscarBancoPorId(idBanco);
+    public ResponseEntity<BancoDTO> buscarPorId(@PathVariable("idBanco") Long idBanco){
+        Optional<BancoDTO> bancos = bancoCrud.buscarBancoPorId(idBanco);
         if (bancos.isEmpty()){
             HttpHeaders headers = new HttpHeaders();
             headers.add("Location","/api/v1/banco/"+idBanco);
@@ -65,14 +65,14 @@ public class ControladorBanco{
 
     @DeleteMapping("/{idBanco}")
     public  ResponseEntity<HttpStatus> eliminarBancoPorId(@PathVariable("idBanco") Long id){
-        Optional<Banco> bancoToDelete = bancoCrud.buscarBancoPorId(id);
+       /* Optional<Banco> bancoToDelete = bancoCrud.buscarBancoPorId(id);
         if(bancoToDelete.isEmpty())
         {
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.add("Location", "/api/v1/banco/"+id);
             return new ResponseEntity<>(httpHeaders, HttpStatus.NOT_FOUND);
         }
-        bancoCrud.eliminarBancoPorId(id);
+        bancoCrud.eliminarBancoPorId(id);*/
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

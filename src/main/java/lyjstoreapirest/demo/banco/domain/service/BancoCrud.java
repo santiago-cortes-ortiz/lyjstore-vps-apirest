@@ -10,7 +10,7 @@ public interface BancoCrud {
 
     Long guardar(BancoDTO banco);
 
-    Optional<Banco> buscarBancoPorId(Long idBanco);
+    Optional<BancoDTO> buscarBancoPorId(Long idBanco);
 
     Optional<Banco> eliminarBancoPorId(Long idBanco);
 

@@ -26,9 +26,12 @@ public class BancoCrudImpl implements BancoCrud {
     }
 
     @Override
-    public Optional<Banco> buscarBancoPorId(Long idBanco)
+    public Optional<BancoDTO> buscarBancoPorId(Long idBanco)
     {
-        return respositorioBanco.buscarBancoPorId(idBanco);
+        return respositorioBanco.buscarBancoPorId(idBanco).map(banco -> BancoDTO.builder()
+                .id(banco.getId())
+                .nombre(banco.getNombre())
+                .build());
     }
 
     @Override
