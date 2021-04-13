@@ -17,22 +17,24 @@ public class RolServicioImpl implements RolServicio {
 
     @Override
     public Long guardar(Rol rol) {
-        return repositorioRol.save(rol).getIdRol();
+        return repositorioRol.guardar(rol);
     }
 
     @Override
-    public Optional<Rol> buscarRolPorId(Long idRol) {
-        return repositorioRol.findById(idRol);
+    public Optional<Rol> buscarRolPorId(Long idRol)
+    {
+        return repositorioRol.buscarRolPorId(idRol);
     }
 
     @Override
     public Optional<Rol> eliminarRolPorId(Long idRol) {
-        repositorioRol.deleteById(idRol);
+        repositorioRol.eliminarRolPorId(idRol);
         return Optional.empty();
     }
 
     @Override
-    public List<Rol> listarRoles() {
-        return repositorioRol.findAll();
+    public List<Rol> listarRoles()
+    {
+        return repositorioRol.listarRoles();
     }
 }

@@ -17,23 +17,25 @@ public class PedidoServicioImpl implements PedidoServicio {
 
     @Override
     public Long guardar(Pedido pedido) {
-        return repositorioPedido.save(pedido).getIdPedido();
+        return repositorioPedido.guardar(pedido);
     }
 
     @Override
-    public Optional<Pedido> buscarPedidoPorId(Long idPedido) {
-        return repositorioPedido.findById(idPedido);
+    public Optional<Pedido> buscarPedidoPorId(Long idPedido)
+    {
+        return repositorioPedido.buscarPedidoPorId(idPedido);
     }
 
     @Override
     public Optional<Pedido> eliminarPedidoPorId(Long idPedido) {
-        repositorioPedido.deleteById(idPedido);
+        repositorioPedido.eliminarPedidoPorId(idPedido);
         return Optional.empty();
     }
 
     @Override
-    public List<Pedido> listarPedidos() {
-        return repositorioPedido.findAll();
+    public List<Pedido> listarPedidos()
+    {
+        return repositorioPedido.listarPedidos();
     }
 
 }

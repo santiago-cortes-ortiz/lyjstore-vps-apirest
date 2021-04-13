@@ -17,9 +17,11 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Pedido implements Serializable {
+public class Pedido implements Serializable
+{
 
     private static final long serialVersionUID = -4777046203696545729L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pedido")

@@ -17,23 +17,24 @@ public class MetodoDePagoServicioImpl implements MetodoDePagoServicio {
 
     @Override
     public Long guardar(MetodoPago metodoPago) {
-        return repositorioMetodoDePago.save(metodoPago).getIdTarjeta();
+        return repositorioMetodoDePago.guardar(metodoPago);
+
     }
 
     @Override
     public Optional<MetodoPago> buscarMetodoPagoPorId(Long idMetodoPago) {
-        return repositorioMetodoDePago.findById(idMetodoPago);
+        return repositorioMetodoDePago.buscarMetodoPagoPorId(idMetodoPago);
     }
 
     @Override
     public Optional<MetodoPago> eliminarMetodoPagoPorId(Long idMetodoPago) {
-        repositorioMetodoDePago.deleteById(idMetodoPago);
+        repositorioMetodoDePago.eliminarMetodoPagoPorId(idMetodoPago);
         return Optional.empty();
     }
 
     @Override
     public List<MetodoPago> listarMetodosPago() {
-        return repositorioMetodoDePago.findAll();
+        return repositorioMetodoDePago.listarMetodosPago();
     }
 
 }

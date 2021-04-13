@@ -17,22 +17,22 @@ public class CuentaAzureServicioImpl implements CuentaAzureServicio {
 
     @Override
     public Long guardar(CuentaAzure cuentaAzure) {
-        return repositorioCuentaAzure.save(cuentaAzure).getIdCuentaAzure();
+        return repositorioCuentaAzure.guardar(cuentaAzure);
     }
 
     @Override
     public Optional<CuentaAzure> buscarCuentaAzurePorId(Long idCuentaAzure) {
-        return repositorioCuentaAzure.findById(idCuentaAzure);
+        return repositorioCuentaAzure.buscarCuentaAzurePorId(idCuentaAzure);
     }
 
     @Override
     public Optional<CuentaAzure> eliminarCuentaAzurePorId(Long idCuentaAzure) {
-        repositorioCuentaAzure.deleteById(idCuentaAzure);
+        repositorioCuentaAzure.eliminarCuentaAzurePorId(idCuentaAzure);
         return Optional.empty();
     }
 
     @Override
     public List<CuentaAzure> listarCuentasAzure() {
-        return repositorioCuentaAzure.findAll();
+        return repositorioCuentaAzure.listarCuentasAzure();
     }
 }

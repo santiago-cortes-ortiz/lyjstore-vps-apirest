@@ -6,7 +6,9 @@ import lyjstoreapirest.demo.rol.domain.model.Rol;
 import java.util.List;
 import java.util.Optional;
 
-public interface RolServicio {
+public interface RolServicio
+{
+
     Long guardar(Rol rol);
 
     Optional<Rol> buscarRolPorId(Long idRol);

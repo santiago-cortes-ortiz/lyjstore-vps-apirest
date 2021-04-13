@@ -17,22 +17,23 @@ public class ProductoServicioImpl implements ProductoServicio {
 
     @Override
     public Long guardar(Producto producto) {
-        return respositorioProducto.save(producto).getIdProducto();
+        return respositorioProducto.guardar(producto);
+
     }
 
     @Override
     public Optional<Producto> buscarProductoPorId(Long idProducto) {
-        return respositorioProducto.findById(idProducto);
+        return respositorioProducto.buscarProductoPorId(idProducto);
     }
 
     @Override
     public Optional<Producto> eliminarProductoPorId(Long idProducto) {
-        respositorioProducto.deleteById(idProducto);
+        respositorioProducto.eliminarProductoPorId(idProducto);
         return Optional.empty();
     }
 
     @Override
     public List<Producto> listarProductos() {
-        return respositorioProducto.findAll();
+        return respositorioProducto.listarProductos();
     }
 }

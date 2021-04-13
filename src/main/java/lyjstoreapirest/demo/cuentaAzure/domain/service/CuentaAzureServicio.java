@@ -6,7 +6,8 @@ import lyjstoreapirest.demo.cuentaAzure.domain.model.CuentaAzure;
 import java.util.List;
 import java.util.Optional;
 
-public interface CuentaAzureServicio {
+public interface CuentaAzureServicio
+{
     Long guardar(CuentaAzure cuentaAzure);
 
     Optional<CuentaAzure> buscarCuentaAzurePorId(Long idCuentaAzure);

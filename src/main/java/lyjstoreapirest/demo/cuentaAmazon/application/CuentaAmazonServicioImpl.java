@@ -17,22 +17,22 @@ public class CuentaAmazonServicioImpl implements CuentaAmazonServicio {
 
     @Override
     public Long guardar(CuentaAmazon cuentaAmazon) {
-        return repositorioCuentaAmazon.save(cuentaAmazon).getIdCuentaAmazon();
+        return repositorioCuentaAmazon.guardar(cuentaAmazon);
     }
 
     @Override
     public Optional<CuentaAmazon> buscarCuentaAmazonPorId(Long idCuentaAmazon) {
-        return repositorioCuentaAmazon.findById(idCuentaAmazon);
+        return repositorioCuentaAmazon.buscarCuentaAmazonPorId(idCuentaAmazon);
     }
 
     @Override
     public Optional<CuentaAmazon> eliminarCuentaAmazonPorId(Long idCuentaAmazon) {
-        repositorioCuentaAmazon.deleteById(idCuentaAmazon);
-        return Optional.empty();
+        return repositorioCuentaAmazon.eliminarCuentaAmazonPorId(idCuentaAmazon);
+
     }
 
     @Override
     public List<CuentaAmazon> listarCuentasAmazon() {
-        return repositorioCuentaAmazon.findAll();
+        return repositorioCuentaAmazon.listarCuentasAmazon();
     }
 }

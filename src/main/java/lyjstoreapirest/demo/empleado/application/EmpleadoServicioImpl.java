@@ -17,22 +17,22 @@ public class EmpleadoServicioImpl implements EmpleadoServicio {
 
     @Override
     public Long guardar(Empleado empleado) {
-        return repositorioEmpleado.save(empleado).getCedula();
+        return repositorioEmpleado.guardar(empleado);
     }
 
     @Override
     public Optional<Empleado> buscarEmpleadoPorId(Long idEmpleado) {
-        return repositorioEmpleado.findById(idEmpleado);
+        return repositorioEmpleado.buscarEmpleadoPorId(idEmpleado);
     }
 
     @Override
     public Optional<Empleado> eliminarEmpleadoPorId(Long idEmpleado) {
-        repositorioEmpleado.deleteById(idEmpleado);
+        repositorioEmpleado.eliminarEmpleadoPorId(idEmpleado);
         return Optional.empty();
     }
 
     @Override
     public List<Empleado> listarEmpleado() {
-        return repositorioEmpleado.findAll();
+        return repositorioEmpleado.listarEmpleado();
     }
 }

@@ -26,7 +26,7 @@ public class CuentaAmazon implements Serializable {
     private String direccion2;
     @Column(name = "codigo_postal")
     private Integer codigoPostal;
-    private Double telefono;
+    private Long telefono;
     private String ciudad;
     private String estado;
 }

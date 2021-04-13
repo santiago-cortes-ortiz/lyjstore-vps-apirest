@@ -7,20 +7,23 @@ import lyjstoreapirest.demo.banco.domain.model.Banco;
 import lyjstoreapirest.demo.tiposDeCuenta.domain.model.TipoDeCuenta;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "formas_pagos")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class FormaDePago {
+public class FormaDePago implements Serializable {
+
+    private static final long serialVersionUID = 4395379119932663587L;
     @Id
     @Column(name = "metodo_banco_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "num_pagos")
-    private Integer numeroPagos;
+    private Long numeroPagos;
 
     @Column( name = "bancosid_bancos")
     private Long idBanco;

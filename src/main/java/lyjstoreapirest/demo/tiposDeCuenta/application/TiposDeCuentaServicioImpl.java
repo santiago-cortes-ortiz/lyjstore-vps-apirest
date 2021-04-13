@@ -17,22 +17,22 @@ public class TiposDeCuentaServicioImpl implements TiposDeCuentaServicio {
 
     @Override
     public Long guardar(TipoDeCuenta tipoDeCuenta) {
-        return repositorioTiposDeCuenta.save(tipoDeCuenta).getId();
+        return repositorioTiposDeCuenta.guardar(tipoDeCuenta);
     }
 
     @Override
     public Optional<TipoDeCuenta> buscarTiposDeCuentaPorId(Long idTiposDeCuenta) {
-        return repositorioTiposDeCuenta.findById(idTiposDeCuenta);
+        return repositorioTiposDeCuenta.buscarTiposDeCuentaPorId(idTiposDeCuenta);
     }
 
     @Override
     public Optional<TipoDeCuenta> eliminarTiposDeCuentaPorId(Long idTiposDeCuenta) {
-        repositorioTiposDeCuenta.deleteById(idTiposDeCuenta);
+        repositorioTiposDeCuenta.eliminarTiposDeCuentaPorId(idTiposDeCuenta);
         return Optional.empty();
     }
 
     @Override
     public List<TipoDeCuenta> listarTiposDeCuenta() {
-        return repositorioTiposDeCuenta.findAll();
+        return repositorioTiposDeCuenta.listarTiposDeCuenta();
     }
 }
