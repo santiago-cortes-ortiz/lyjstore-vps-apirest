@@ -1,6 +1,7 @@
 package lyjstoreapirest.demo.banco.infrastucture.controller;
 
 import lombok.AllArgsConstructor;
+import lyjstoreapirest.demo.banco.domain.dto.BancoDTO;
 import lyjstoreapirest.demo.banco.domain.model.Banco;
 import lyjstoreapirest.demo.banco.domain.service.BancoCrud;
 import org.springframework.http.HttpHeaders;
@@ -19,7 +20,7 @@ public class ControladorBanco{
     private BancoCrud bancoCrud;
 
     @PostMapping
-    public ResponseEntity<HttpHeaders> adicionarBanco(@RequestBody Banco banco){
+    public ResponseEntity<HttpHeaders> adicionarBanco(@RequestBody BancoDTO banco){
         Long idBanco = bancoCrud.guardar(banco);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location","/api/v1/banco/"+idBanco);
@@ -46,7 +47,7 @@ public class ControladorBanco{
 
     @PutMapping("/actualizar/{idBanco}")
     public ResponseEntity<Optional<Banco>> actualizarNombre(@RequestBody Banco nuevoBanco, @PathVariable("idBanco") Long idBanco){
-        Optional<Banco> bancoABuscar = bancoCrud.buscarBancoPorId(idBanco);
+        /*Optional<Banco> bancoABuscar = bancoCrud.buscarBancoPorId(idBanco);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location","/api/v1/banco/"+idBanco);
         if (bancoABuscar.isEmpty()){
@@ -57,7 +58,8 @@ public class ControladorBanco{
             bancoABuscar.get().setNombre(nuevoBanco.getNombre());
             bancoCrud.guardar(bancoABuscar.get());
             return new ResponseEntity<>(headers,HttpStatus.OK);
-        }
+        }*/
+        return null;
     }
 
 

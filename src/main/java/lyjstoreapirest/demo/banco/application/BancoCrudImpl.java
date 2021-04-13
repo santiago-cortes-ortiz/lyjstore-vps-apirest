@@ -1,9 +1,11 @@
 package lyjstoreapirest.demo.banco.application;
 
 import lombok.AllArgsConstructor;
+import lyjstoreapirest.demo.banco.domain.dto.BancoDTO;
 import lyjstoreapirest.demo.banco.domain.service.BancoCrud;
 import lyjstoreapirest.demo.banco.domain.model.Banco;
 import lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco;
+import lyjstoreapirest.demo.banco.infrastucture.mapper.BancoMapper;
 import lyjstoreapirest.demo.general_service.Servicio;
 
 import java.util.List;
@@ -14,10 +16,12 @@ import java.util.Optional;
 public class BancoCrudImpl implements BancoCrud {
 
     private RespositorioBanco respositorioBanco;
+    private BancoMapper bancoMapper;
 
     @Override
-    public Long guardar(Banco banco) {
-        Long bancoAGuardar = respositorioBanco.guardar(banco);
+    public Long guardar(BancoDTO banco) {
+        Banco banquito = bancoMapper.bancoDtoToBanco(banco);
+        Long bancoAGuardar = respositorioBanco.guardar(banquito);
         return bancoAGuardar;
     }
 

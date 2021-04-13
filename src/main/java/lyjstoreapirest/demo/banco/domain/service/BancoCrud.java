@@ -1,5 +1,6 @@
 package lyjstoreapirest.demo.banco.domain.service;
 
+import lyjstoreapirest.demo.banco.domain.dto.BancoDTO;
 import lyjstoreapirest.demo.banco.domain.model.Banco;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.Optional;
 
 public interface BancoCrud {
 
-    Long guardar(Banco banco);
+    Long guardar(BancoDTO banco);
 
     Optional<Banco> buscarBancoPorId(Long idBanco);
 
