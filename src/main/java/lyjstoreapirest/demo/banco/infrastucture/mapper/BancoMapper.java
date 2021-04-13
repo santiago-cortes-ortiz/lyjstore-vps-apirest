@@ -9,4 +9,6 @@ public interface BancoMapper {
 
     public Banco bancoDtoToBanco(BancoDTO bancoDTO);
 
+    public BancoDTO bancoToBancoDto(Banco banco);
+
 }

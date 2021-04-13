@@ -8,8 +8,11 @@ import lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco;
 import lyjstoreapirest.demo.banco.infrastucture.mapper.BancoMapper;
 import lyjstoreapirest.demo.general_service.Servicio;
 
+import java.sql.DataTruncation;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Servicio
 @AllArgsConstructor
@@ -35,14 +38,23 @@ public class BancoCrudImpl implements BancoCrud {
     }
 
     @Override
-    public Optional<Banco> eliminarBancoPorId(Long idBanco)
+    public Optional<BancoDTO> eliminarBancoPorId(Long idBanco)
     {
-        return respositorioBanco.eliminarBancoPorId(idBanco);
+        return respositorioBanco.eliminarBancoPorId(idBanco).map(banco -> BancoDTO.builder()
+                .id(banco.getId())
+                .nombre(banco.getNombre())
+                .build());
     }
 
     @Override
-    public List<Banco> listarBancos() {
-        return respositorioBanco.listarBancos();
+    public List<BancoDTO> listarBancos() {
+        List<Banco> listaBancoNormales = respositorioBanco.listarBancos();
+        List<BancoDTO> listaBancoDto = listaBancoNormales.stream().map(listaDto -> BancoDTO.builder()
+                .id(listaDto.getId())
+                .nombre(listaDto.getNombre())
+                .build())
+                .collect(Collectors.toList());
+        return listaBancoDto;
     }
 
 

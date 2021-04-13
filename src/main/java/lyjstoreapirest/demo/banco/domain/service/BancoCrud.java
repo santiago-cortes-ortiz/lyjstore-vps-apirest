@@ -12,9 +12,9 @@ public interface BancoCrud {
 
     Optional<BancoDTO> buscarBancoPorId(Long idBanco);
 
-    Optional<Banco> eliminarBancoPorId(Long idBanco);
+    Optional<BancoDTO> eliminarBancoPorId(Long idBanco);
 
-    List<Banco> listarBancos();
+    List<BancoDTO> listarBancos();
 
 
 }
