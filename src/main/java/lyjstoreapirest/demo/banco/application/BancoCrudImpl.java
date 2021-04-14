@@ -24,8 +24,7 @@ public class BancoCrudImpl implements BancoCrud {
     @Override
     public Long guardar(BancoDTO banco) {
         Banco banquito = bancoMapper.bancoDtoToBanco(banco);
-        Long bancoAGuardar = respositorioBanco.guardar(banquito);
-        return bancoAGuardar;
+        return respositorioBanco.guardar(banquito);
     }
 
     @Override
