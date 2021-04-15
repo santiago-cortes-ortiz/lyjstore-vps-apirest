@@ -17,4 +17,6 @@ public interface CourierCrud {
 
     List<CourierDTO> listarCouriers();
 
+    void actualizarCourier(CourierDTO courierDTO, Long id);
+
 }

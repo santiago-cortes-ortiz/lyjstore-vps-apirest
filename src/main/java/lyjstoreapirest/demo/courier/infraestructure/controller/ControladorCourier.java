@@ -44,20 +44,13 @@ public class ControladorCourier {
         }
     }
     @PutMapping("/actualizar/{idCourier}")
-    public ResponseEntity<Optional<Courier>> actualizarNombre(@RequestBody Courier nuevoCourier, @PathVariable("idCourier") Long idCourier){
-        /*Optional<Courier> courierABuscar = courierCrud.buscarCourierPorId(idCourier);
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Location","/api/v1/courier/"+idCourier);
-        if (courierABuscar.isEmpty()){
-            courierCrud.guardar(nuevoCourier);
-            return new ResponseEntity<>(headers,HttpStatus.CREATED);
+    public ResponseEntity<HttpStatus> actualizarNombre(@RequestBody CourierDTO nuevoCourier, @PathVariable("idCourier") Long idCourier){
+        try{
+            courierCrud.actualizarCourier(nuevoCourier,idCourier);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }catch(Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        else{
-            courierABuscar.get().setNombre(nuevoCourier.getNombre());
-            courierCrud.guardar(courierABuscar.get());
-            return new ResponseEntity<>(headers,HttpStatus.OK);
-        }*/
-        return null;
     }
 
     @DeleteMapping("/{idCourier}")

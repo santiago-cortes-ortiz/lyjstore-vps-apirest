@@ -53,4 +53,20 @@ public class CourierCrudImpl implements CourierCrud {
                 .build())
                 .collect(Collectors.toList());
     }
+
+    public void actualizarCourier(CourierDTO courierDTO, Long id){
+
+        Optional<Courier> courierABuscar = repositorioCourier.buscarCourierPorId(id);
+
+        if (courierABuscar.isEmpty()){
+            courierABuscar.get().setId(id);
+            courierABuscar.get().setNombre(courierDTO.getNombre());
+            repositorioCourier.guardar(courierABuscar.get());
+        }
+        else{
+            courierABuscar.get().setNombre(courierDTO.getNombre());
+            repositorioCourier.guardar(courierABuscar.get());
+        }
+
+    }
 }
