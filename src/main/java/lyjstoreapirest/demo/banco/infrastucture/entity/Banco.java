@@ -1,6 +1,7 @@
-package lyjstoreapirest.demo.banco.domain.model;
+package lyjstoreapirest.demo.banco.infrastucture.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lyjstoreapirest.demo.formaDePago.domain.model.FormaDePago;
@@ -14,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Builder
 public class Banco implements Serializable {
     private static final long serialVersionUID = -971502324171159506L;
     @Id

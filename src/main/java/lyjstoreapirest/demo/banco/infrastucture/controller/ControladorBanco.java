@@ -2,7 +2,7 @@ package lyjstoreapirest.demo.banco.infrastucture.controller;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.banco.domain.dto.BancoDTO;
-import lyjstoreapirest.demo.banco.domain.model.Banco;
+import lyjstoreapirest.demo.banco.infrastucture.entity.Banco;
 import lyjstoreapirest.demo.banco.domain.service.BancoCrud;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -34,14 +34,15 @@ public class ControladorBanco{
 
     @GetMapping("/{idBanco}")
     public ResponseEntity<BancoDTO> buscarPorId(@PathVariable("idBanco") Long idBanco){
-        Optional<BancoDTO> bancos = bancoCrud.buscarBancoPorId(idBanco);
-        if (bancos.isEmpty()){
+
+        try {
+            BancoDTO bancos = bancoCrud.buscarBancoPorId(idBanco);
+            return new ResponseEntity<>(bancos,HttpStatus.OK);
+
+        } catch (Exception e) {
             HttpHeaders headers = new HttpHeaders();
             headers.add("Location","/api/v1/banco/"+idBanco);
             return new ResponseEntity<>(headers,HttpStatus.NOT_FOUND);
-        }
-        else{
-            return new ResponseEntity<>(bancos.get(),HttpStatus.OK);
         }
     }
 
@@ -65,15 +66,15 @@ public class ControladorBanco{
 
     @DeleteMapping("/{idBanco}")
     public  ResponseEntity<HttpStatus> eliminarBancoPorId(@PathVariable("idBanco") Long id){
-        Optional<BancoDTO> bancoToDelete = bancoCrud.buscarBancoPorId(id);
-        if(bancoToDelete.isEmpty())
-        {
+        try {
+            bancoCrud.eliminarBancoPorId(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.add("Location", "/api/v1/banco/"+id);
             return new ResponseEntity<>(httpHeaders, HttpStatus.NOT_FOUND);
         }
-        bancoCrud.eliminarBancoPorId(id);
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

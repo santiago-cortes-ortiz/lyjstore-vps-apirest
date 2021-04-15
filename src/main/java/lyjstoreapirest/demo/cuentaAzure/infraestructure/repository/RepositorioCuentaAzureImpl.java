@@ -1,15 +1,10 @@
 package lyjstoreapirest.demo.cuentaAzure.infraestructure.repository;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.banco.domain.repository.JpaMetodosBanco;
 import lyjstoreapirest.demo.cuentaAzure.domain.model.CuentaAzure;
 import lyjstoreapirest.demo.cuentaAzure.domain.repository.JpaCuentasAzure;
 import lyjstoreapirest.demo.cuentaAzure.domain.repository.RepositorioCuentaAzure;
 import lyjstoreapirest.demo.general_service.Repositorio;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;

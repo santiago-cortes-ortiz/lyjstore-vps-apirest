@@ -3,7 +3,7 @@ package lyjstoreapirest.demo.formaDePago.domain.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lyjstoreapirest.demo.banco.domain.model.Banco;
+import lyjstoreapirest.demo.banco.infrastucture.entity.Banco;
 import lyjstoreapirest.demo.tiposDeCuenta.domain.model.TipoDeCuenta;
 
 import javax.persistence.*;

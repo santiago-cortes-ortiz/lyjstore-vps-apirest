@@ -1,8 +1,6 @@
 package lyjstoreapirest.demo.courier.application;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.banco.domain.dto.BancoDTO;
-import lyjstoreapirest.demo.banco.domain.model.Banco;
 import lyjstoreapirest.demo.courier.domain.dto.CourierDTO;
 import lyjstoreapirest.demo.courier.domain.service.CourierCrud;
 import lyjstoreapirest.demo.courier.domain.model.Courier;

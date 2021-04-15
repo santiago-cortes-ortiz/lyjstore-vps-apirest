@@ -1,11 +1,10 @@
 package lyjstoreapirest.demo.metodoDePago.domain.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lyjstoreapirest.demo.banco.domain.model.Banco;
+import lyjstoreapirest.demo.banco.infrastucture.entity.Banco;
 import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
 
 import javax.persistence.*;
