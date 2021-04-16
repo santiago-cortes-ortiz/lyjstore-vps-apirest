@@ -5,7 +5,7 @@ import lyjstoreapirest.demo.banco.domain.dto.BancoDTO;
 import java.util.List;
 import java.util.Optional;
 
-public interface BancoCrud {
+public interface BancoController {
 
     Long guardar(BancoDTO banco);
 

@@ -2,19 +2,17 @@ package lyjstoreapirest.demo.banco.application;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.banco.domain.dto.BancoDTO;
-import lyjstoreapirest.demo.banco.domain.service.BancoCrud;
-import lyjstoreapirest.demo.banco.infrastucture.entity.Banco;
 import lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco;
-import lyjstoreapirest.demo.banco.infrastucture.mapper.BancoMapper;
+import lyjstoreapirest.demo.banco.domain.service.BancoController;
 import lyjstoreapirest.demo.general_service.Servicio;
+
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Servicio
 @AllArgsConstructor
-public class BancoCrudImpl implements BancoCrud {
+public class BancoControllerFull implements BancoController {
 
     private RespositorioBanco respositorioBanco;
 
