@@ -32,10 +32,7 @@ public class BancoCrudImpl implements BancoCrud {
     @Override
     public Optional<BancoDTO> eliminarBancoPorId(Long idBanco)
     {
-        return respositorioBanco.eliminarBancoPorId(idBanco).map(banco -> BancoDTO.builder()
-                .id(banco.getId())
-                .nombre(banco.getNombre())
-                .build());
+        return respositorioBanco.eliminarBancoPorId(idBanco);
     }
 
     @Override
@@ -43,7 +40,10 @@ public class BancoCrudImpl implements BancoCrud {
         return respositorioBanco.listarBancos();
     }
 
-
+    @Override
+    public void actualizarBanco(BancoDTO bancoDTO, Long idBanco) {
+        respositorioBanco.actualizarBanco(bancoDTO,idBanco);
+    }
 
 
 }

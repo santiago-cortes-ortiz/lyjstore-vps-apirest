@@ -47,20 +47,17 @@ public class ControladorBanco{
     }
 
     @PutMapping("/actualizar/{idBanco}")
-    public ResponseEntity<Optional<Banco>> actualizarNombre(@RequestBody Banco nuevoBanco, @PathVariable("idBanco") Long idBanco){
-        /*Optional<Banco> bancoABuscar = bancoCrud.buscarBancoPorId(idBanco);
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Location","/api/v1/banco/"+idBanco);
-        if (bancoABuscar.isEmpty()){
-            bancoCrud.guardar(nuevoBanco);
-            return new ResponseEntity<>(headers,HttpStatus.CREATED);
+    public ResponseEntity<HttpStatus> actualizarBanco(@RequestBody BancoDTO nuevoBanco, @PathVariable("idBanco") Long idBanco){
+        try{
+             bancoCrud.actualizarBanco(nuevoBanco,idBanco);
+             return  new ResponseEntity<>(HttpStatus.ACCEPTED);
         }
-        else{
-            bancoABuscar.get().setNombre(nuevoBanco.getNombre());
-            bancoCrud.guardar(bancoABuscar.get());
-            return new ResponseEntity<>(headers,HttpStatus.OK);
-        }*/
-        return null;
+        catch(Exception e){
+            Long idBancoCreado = bancoCrud.guardar(nuevoBanco);
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Location","/api/v1/banco/"+idBancoCreado);
+            return  new  ResponseEntity<>(headers, HttpStatus.CREATED);
+        }
     }
 
 

@@ -46,4 +46,11 @@ public class RespositorioBancoImpl implements RespositorioBanco  {
                 .collect(Collectors.toList());
         return listaBancoDto;
     }
+
+    @Override
+    public void actualizarBanco(BancoDTO bancoDTO, Long id) {
+        Banco bancoAGuardar = jpaMetodosBanco.findById(id).get();
+        bancoAGuardar.setNombre(bancoDTO.getNombre());
+        jpaMetodosBanco.save(bancoAGuardar);
+    }
 }

@@ -16,4 +16,5 @@ public interface RespositorioBanco{
 
     List<BancoDTO> listarBancos();
 
+    void actualizarBanco(BancoDTO bancoDTO,Long id);
 }

@@ -15,5 +15,6 @@ public interface BancoCrud {
 
     List<BancoDTO> listarBancos();
 
+    void actualizarBanco(BancoDTO bancoDTO, Long idBanco);
 
 }
