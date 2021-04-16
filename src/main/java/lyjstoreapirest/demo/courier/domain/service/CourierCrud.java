@@ -9,7 +9,7 @@ public interface CourierCrud {
 
     Long guardar(CourierDTO courier);
 
-    Optional<CourierDTO> buscarCourierPorId(Long idCourier);
+    CourierDTO buscarCourierPorId(Long idCourier);
 
     Optional<CourierDTO> eliminarCourierPorId(Long idCourier);
 

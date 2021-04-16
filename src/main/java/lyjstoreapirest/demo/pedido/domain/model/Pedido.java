@@ -3,14 +3,12 @@ package lyjstoreapirest.demo.pedido.domain.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lyjstoreapirest.demo.courier.domain.model.Courier;
+import lyjstoreapirest.demo.courier.infraestructure.entity.Courier;
 import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Table(name = "pedidos")

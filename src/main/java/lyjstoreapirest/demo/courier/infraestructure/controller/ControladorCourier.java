@@ -2,7 +2,6 @@ package lyjstoreapirest.demo.courier.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.courier.domain.dto.CourierDTO;
-import lyjstoreapirest.demo.courier.domain.model.Courier;
 import lyjstoreapirest.demo.courier.domain.service.CourierCrud;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -33,15 +32,16 @@ public class ControladorCourier {
 
     @GetMapping("/{idCourier}")
     public ResponseEntity<CourierDTO> buscarCourierPorId(@PathVariable("idCourier") Long idCourier){
-        Optional<CourierDTO> courier = courierCrud.buscarCourierPorId(idCourier);
-        if (courier.isEmpty()){
+
+        try {
+            CourierDTO courier = courierCrud.buscarCourierPorId(idCourier);
+            return new ResponseEntity<>(courier,HttpStatus.OK);
+        }catch (Exception e){
             HttpHeaders headers = new HttpHeaders();
             headers.add("Location","/api/v1/courier/"+idCourier);
             return new ResponseEntity<>(headers,HttpStatus.NOT_FOUND);
         }
-        else{
-            return new ResponseEntity<>(courier.get(),HttpStatus.OK);
-        }
+
     }
     @PutMapping("/actualizar/{idCourier}")
     public ResponseEntity<HttpStatus> actualizarNombre(@RequestBody CourierDTO nuevoCourier, @PathVariable("idCourier") Long idCourier){
@@ -55,15 +55,15 @@ public class ControladorCourier {
 
     @DeleteMapping("/{idCourier}")
     public  ResponseEntity<HttpStatus> eliminarCourierPorId(@PathVariable("idCourier") Long id){
-        Optional<CourierDTO> courierParaEliminar = courierCrud.buscarCourierPorId(id);
-        if(courierParaEliminar.isEmpty())
-        {
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.add("Location", "/api/v1/courier/"+id);
-            return new ResponseEntity<>(httpHeaders, HttpStatus.NOT_FOUND);
+        try {
+            courierCrud.eliminarCourierPorId(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }catch (Exception e){
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Location","/api/v1/courier/"+id);
+            return new ResponseEntity<>(headers,HttpStatus.NOT_FOUND);
         }
-        courierCrud.eliminarCourierPorId(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+
     }
 
 

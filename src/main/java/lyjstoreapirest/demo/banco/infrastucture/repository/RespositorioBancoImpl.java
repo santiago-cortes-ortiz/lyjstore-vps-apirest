@@ -1,4 +1,4 @@
-package lyjstoreapirest.demo.banco.infrastucture;
+package lyjstoreapirest.demo.banco.infrastucture.repository;
 
 import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.banco.domain.dto.BancoDTO;

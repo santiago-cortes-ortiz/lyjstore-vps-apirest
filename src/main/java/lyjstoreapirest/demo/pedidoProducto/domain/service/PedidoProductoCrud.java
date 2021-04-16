@@ -1,9 +1,7 @@
 package lyjstoreapirest.demo.pedidoProducto.domain.service;
 
-import lyjstoreapirest.demo.courier.domain.model.Courier;
 import lyjstoreapirest.demo.pedidoProducto.domain.PedidoProducto;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface PedidoProductoCrud {
