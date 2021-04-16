@@ -1,7 +1,8 @@
 package lyjstoreapirest.demo.cuentaAmazon.infraestructure.controller;
 
 import lombok.AllArgsConstructor;
-import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
+import lyjstoreapirest.demo.cuentaAmazon.domain.dto.CuentaAmazonDTO;
+import lyjstoreapirest.demo.cuentaAmazon.infraestructure.entity.CuentaAmazon;
 import lyjstoreapirest.demo.cuentaAmazon.domain.service.CuentaAmazonServicio;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class ControladorCuentaAmazon {
     private CuentaAmazonServicio cuentaAmazonServicio;
 
     @PostMapping
-    public ResponseEntity<HttpHeaders> adicionarCuentaAmazon(@RequestBody CuentaAmazon cuentaAmazon){
+    public ResponseEntity<HttpHeaders> adicionarCuentaAmazon(@RequestBody CuentaAmazonDTO cuentaAmazon){
         Long idCuentaAmazon = cuentaAmazonServicio.guardar(cuentaAmazon);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location","/api/v1/amazoncuenta/"+idCuentaAmazon);
@@ -27,34 +28,37 @@ public class ControladorCuentaAmazon {
     }
 
     @GetMapping("/listar")
-    public ResponseEntity<List<CuentaAmazon>> listarCuentasAmazon(){
+    public ResponseEntity<List<CuentaAmazonDTO>> listarCuentasAmazon(){
         return new ResponseEntity<>(cuentaAmazonServicio.listarCuentasAmazon(),HttpStatus.OK);
     }
 
     @GetMapping("{idCuentaAmazon}")
-    public ResponseEntity<CuentaAmazon> buscarCuentaAmazonPorId(@PathVariable("idCuentaAmazon") Long idCuentaAmazon){
-        Optional<CuentaAmazon> cuentaAmazonABuscar = cuentaAmazonServicio.buscarCuentaAmazonPorId(idCuentaAmazon);
-        if (cuentaAmazonABuscar.isEmpty()){
+    public ResponseEntity<CuentaAmazonDTO> buscarCuentaAmazonPorId(@PathVariable("idCuentaAmazon") Long idCuentaAmazon){
+        try {
+            CuentaAmazonDTO cuentaAmazonABuscar = cuentaAmazonServicio.buscarCuentaAmazonPorId(idCuentaAmazon);
+            return new ResponseEntity<>(cuentaAmazonABuscar,HttpStatus.OK);
+        }
+        catch (Exception e){
             HttpHeaders headers = new HttpHeaders();
             headers.add("Location","/api/v1/amazoncuenta/"+idCuentaAmazon);
             return  new ResponseEntity<>(headers,HttpStatus.NOT_FOUND);
         }
-        else{
-            return new ResponseEntity<>(cuentaAmazonABuscar.get(),HttpStatus.OK);
-        }
+
     }
 
     @DeleteMapping("/{idCuentaAmazon}")
     public  ResponseEntity<HttpStatus> eliminarCuentaAmazonPorId(@PathVariable("idCuentaAmazon") Long id){
-        Optional<CuentaAmazon> cuentaAmazonAEliminar = cuentaAmazonServicio.buscarCuentaAmazonPorId(id);
-        if(cuentaAmazonAEliminar.isEmpty())
-        {
+
+        try {
+            cuentaAmazonServicio.eliminarCuentaAmazonPorId(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        catch (Exception e){
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.add("Location", "/api/v1/amazoncuenta/"+id);
             return new ResponseEntity<>(httpHeaders, HttpStatus.NOT_FOUND);
         }
-        cuentaAmazonServicio.eliminarCuentaAmazonPorId(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+
     }
 
 }

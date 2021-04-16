@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lyjstoreapirest.demo.banco.infrastucture.entity.Banco;
-import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
+import lyjstoreapirest.demo.cuentaAmazon.infraestructure.entity.CuentaAmazon;
 
 import javax.persistence.*;
 import java.io.Serializable;

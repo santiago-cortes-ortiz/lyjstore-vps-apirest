@@ -1,8 +1,9 @@
 package lyjstoreapirest.demo.cuentaAmazon.application;
 
 import lombok.AllArgsConstructor;
+import lyjstoreapirest.demo.cuentaAmazon.domain.dto.CuentaAmazonDTO;
 import lyjstoreapirest.demo.cuentaAmazon.domain.service.CuentaAmazonServicio;
-import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
+import lyjstoreapirest.demo.cuentaAmazon.infraestructure.entity.CuentaAmazon;
 import lyjstoreapirest.demo.cuentaAmazon.domain.repository.RepositorioCuentaAmazon;
 import lyjstoreapirest.demo.general_service.Servicio;
 
@@ -16,23 +17,23 @@ public class CuentaAmazonServicioImpl implements CuentaAmazonServicio {
     private RepositorioCuentaAmazon repositorioCuentaAmazon;
 
     @Override
-    public Long guardar(CuentaAmazon cuentaAmazon) {
+    public Long guardar(CuentaAmazonDTO cuentaAmazon) {
         return repositorioCuentaAmazon.guardar(cuentaAmazon);
     }
 
     @Override
-    public Optional<CuentaAmazon> buscarCuentaAmazonPorId(Long idCuentaAmazon) {
+    public CuentaAmazonDTO buscarCuentaAmazonPorId(Long idCuentaAmazon) {
         return repositorioCuentaAmazon.buscarCuentaAmazonPorId(idCuentaAmazon);
     }
 
     @Override
-    public Optional<CuentaAmazon> eliminarCuentaAmazonPorId(Long idCuentaAmazon) {
+    public Optional<CuentaAmazonDTO> eliminarCuentaAmazonPorId(Long idCuentaAmazon) {
         return repositorioCuentaAmazon.eliminarCuentaAmazonPorId(idCuentaAmazon);
 
     }
 
     @Override
-    public List<CuentaAmazon> listarCuentasAmazon() {
+    public List<CuentaAmazonDTO> listarCuentasAmazon() {
         return repositorioCuentaAmazon.listarCuentasAmazon();
     }
 }

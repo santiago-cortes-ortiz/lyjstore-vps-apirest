@@ -1,17 +1,18 @@
 package lyjstoreapirest.demo.cuentaAmazon.domain.repository;
 
-import lyjstoreapirest.demo.cuentaAmazon.domain.model.CuentaAmazon;
+import lyjstoreapirest.demo.cuentaAmazon.domain.dto.CuentaAmazonDTO;
+import lyjstoreapirest.demo.cuentaAmazon.infraestructure.entity.CuentaAmazon;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface RepositorioCuentaAmazon {
 
-    Long guardar(CuentaAmazon cuentaAmazon);
+    Long guardar(CuentaAmazonDTO cuentaAmazon);
 
-    Optional<CuentaAmazon> buscarCuentaAmazonPorId(Long idCuentaAmazon);
+    CuentaAmazonDTO buscarCuentaAmazonPorId(Long idCuentaAmazon);
 
-    Optional<CuentaAmazon> eliminarCuentaAmazonPorId(Long idCuentaAmazon);
+    Optional<CuentaAmazonDTO> eliminarCuentaAmazonPorId(Long idCuentaAmazon);
 
-    List<CuentaAmazon> listarCuentasAmazon();
+    List<CuentaAmazonDTO> listarCuentasAmazon();
 }
