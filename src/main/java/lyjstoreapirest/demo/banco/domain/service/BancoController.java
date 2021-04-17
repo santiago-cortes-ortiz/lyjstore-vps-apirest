@@ -9,9 +9,9 @@ public interface BancoController {
 
     Long guardar(BancoDTO banco);
 
-    BancoDTO buscarBancoPorId(Long idBanco) throws Exception;
+    BancoDTO buscarBancoPorId(Long idBanco);
 
-    Optional<BancoDTO> eliminarBancoPorId(Long idBanco);
+    boolean eliminarBancoPorId(Long idBanco);
 
     List<BancoDTO> listarBancos();
 

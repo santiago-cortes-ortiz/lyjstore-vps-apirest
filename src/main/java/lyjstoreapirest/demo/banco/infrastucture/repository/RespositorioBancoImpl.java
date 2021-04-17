@@ -26,14 +26,25 @@ public class RespositorioBancoImpl implements RespositorioBanco  {
     }
 
     @Override
-    public BancoDTO buscarBancoPorId(Long idBanco) throws Exception {
-        return bancoMapper.bancoToBancoDto(jpaMetodosBanco.findById(idBanco).get());
+    public BancoDTO buscarBancoPorId(Long idBanco){
+        try{
+            return bancoMapper.bancoToBancoDto(jpaMetodosBanco.findById(idBanco).get());
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
-    public Optional<BancoDTO> eliminarBancoPorId(Long idBanco) {
-        jpaMetodosBanco.deleteById(idBanco);
-        return Optional.empty();
+    public boolean eliminarBancoPorId(Long idBanco) {
+        try{
+            jpaMetodosBanco.deleteById(idBanco);
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
     }
 
     @Override

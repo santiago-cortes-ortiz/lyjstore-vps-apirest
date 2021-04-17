@@ -22,13 +22,13 @@ public class BancoControllerFull implements BancoController {
     }
 
     @Override
-    public BancoDTO buscarBancoPorId(Long idBanco) throws Exception
+    public BancoDTO buscarBancoPorId(Long idBanco)
     {
         return respositorioBanco.buscarBancoPorId(idBanco);
     }
 
     @Override
-    public Optional<BancoDTO> eliminarBancoPorId(Long idBanco)
+    public boolean eliminarBancoPorId(Long idBanco)
     {
         return respositorioBanco.eliminarBancoPorId(idBanco);
     }

@@ -32,16 +32,11 @@ public class ControladorBanco{
 
     @GetMapping("/{idBanco}")
     public ResponseEntity<BancoDTO> buscarPorId(@PathVariable("idBanco") Long idBanco){
-
-        try {
-            BancoDTO bancos = bancoController.buscarBancoPorId(idBanco);
-            return new ResponseEntity<>(bancos,HttpStatus.OK);
-
-        } catch (Exception e) {
-            HttpHeaders headers = new HttpHeaders();
-            headers.add("Location","/api/v1/banco/"+idBanco);
-            return new ResponseEntity<>(headers,HttpStatus.NOT_FOUND);
+        BancoDTO bancos = bancoController.buscarBancoPorId(idBanco);
+        if (bancos == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+        return new ResponseEntity<>(bancos,HttpStatus.OK);
     }
 
     @PutMapping("/{idBanco}")
@@ -61,15 +56,14 @@ public class ControladorBanco{
 
     @DeleteMapping("/{idBanco}")
     public  ResponseEntity<HttpStatus> eliminarBancoPorId(@PathVariable("idBanco") Long id){
-        try {
-            bancoController.eliminarBancoPorId(id);
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (Exception e) {
-            e.printStackTrace();
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.add("Location", "/api/v1/banco/"+id);
-            return new ResponseEntity<>(httpHeaders, HttpStatus.NOT_FOUND);
-        }
+            if (bancoController.eliminarBancoPorId(id)){
+                return new ResponseEntity<>(HttpStatus.OK);
+            }
+            else{
+                HttpHeaders httpHeaders = new HttpHeaders();
+                httpHeaders.add("Location", "/api/v1/banco/"+id);
+                return new ResponseEntity<>(httpHeaders, HttpStatus.NOT_FOUND);
+            }
     }
 
 
