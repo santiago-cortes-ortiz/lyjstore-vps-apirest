@@ -16,7 +16,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ControladorBanco{
 
-    private BancoController bancoController;
+    private final BancoController bancoController;
 
     /*@PostMapping
     public ResponseEntity<HttpHeaders> adicionarBanco(@RequestBody BancoDTO banco){
@@ -42,7 +42,7 @@ public class ControladorBanco{
 
     @PutMapping("/{idBanco}")
     public ResponseEntity<HttpStatus> guardarBanco(@RequestBody BancoDTO nuevoBanco, @PathVariable("idBanco") Long idBanco){
-        Long idBancoCreado = null;
+        Long idBancoCreado;
         HttpHeaders headers = new HttpHeaders();
         if (bancoController.buscarBancoPorId(idBanco).isEmpty()){
             idBancoCreado = bancoController.guardar(nuevoBanco);
