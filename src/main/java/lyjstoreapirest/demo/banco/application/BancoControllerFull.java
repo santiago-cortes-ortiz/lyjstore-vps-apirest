@@ -22,7 +22,7 @@ public class BancoControllerFull implements BancoController {
     }
 
     @Override
-    public BancoDTO buscarBancoPorId(Long idBanco)
+    public Optional<BancoDTO> buscarBancoPorId(Long idBanco)
     {
         return respositorioBanco.buscarBancoPorId(idBanco);
     }
@@ -39,8 +39,8 @@ public class BancoControllerFull implements BancoController {
     }
 
     @Override
-    public void actualizarBanco(BancoDTO bancoDTO, Long idBanco) {
-        respositorioBanco.actualizarBanco(bancoDTO,idBanco);
+    public Long actualizarBanco(BancoDTO bancoDTO, Long idBanco) {
+        return respositorioBanco.actualizarBanco(bancoDTO,idBanco);
     }
 
 

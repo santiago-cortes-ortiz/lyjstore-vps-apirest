@@ -9,12 +9,12 @@ public interface BancoController {
 
     Long guardar(BancoDTO banco);
 
-    BancoDTO buscarBancoPorId(Long idBanco);
+    Optional<BancoDTO> buscarBancoPorId(Long idBanco);
 
     boolean eliminarBancoPorId(Long idBanco);
 
     List<BancoDTO> listarBancos();
 
-    void actualizarBanco(BancoDTO bancoDTO, Long idBanco);
+    Long actualizarBanco(BancoDTO bancoDTO, Long idBanco);
 
 }

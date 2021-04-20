@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lyjstoreapirest.demo.banco.domain.dto.BancoDTO;
 import lyjstoreapirest.demo.banco.infrastucture.entity.Banco;
 import lyjstoreapirest.demo.banco.infrastucture.mapper.BancoMapper;
-import lyjstoreapirest.demo.banco.infrastucture.repository.JpaMetodosBanco;
 import lyjstoreapirest.demo.banco.domain.repository.RespositorioBanco;
 import lyjstoreapirest.demo.general_service.Repositorio;
 
@@ -26,14 +25,8 @@ public class RespositorioBancoImpl implements RespositorioBanco  {
     }
 
     @Override
-    public BancoDTO buscarBancoPorId(Long idBanco){
-        try{
-            return bancoMapper.bancoToBancoDto(jpaMetodosBanco.findById(idBanco).get());
-        }
-        catch(Exception e){
-            e.printStackTrace();
-            return null;
-        }
+    public Optional<BancoDTO> buscarBancoPorId(Long idBanco){
+        return Optional.ofNullable(bancoMapper.bancoToBancoDto(jpaMetodosBanco.findById(idBanco).get()));
     }
 
     @Override
@@ -43,6 +36,7 @@ public class RespositorioBancoImpl implements RespositorioBanco  {
             return true;
         }
         catch(Exception e){
+            e.printStackTrace();
             return false;
         }
     }
@@ -59,9 +53,9 @@ public class RespositorioBancoImpl implements RespositorioBanco  {
     }
 
     @Override
-    public void actualizarBanco(BancoDTO bancoDTO, Long id) {
+    public Long actualizarBanco(BancoDTO bancoDTO, Long id) {
         Banco bancoAGuardar = jpaMetodosBanco.findById(id).get();
         bancoAGuardar.setNombre(bancoDTO.getNombre());
-        jpaMetodosBanco.save(bancoAGuardar);
+        return jpaMetodosBanco.save(bancoAGuardar).getId();
     }
 }
