@@ -44,7 +44,7 @@ public class ControladorBanco{
     public ResponseEntity<HttpStatus> guardarBanco(@RequestBody BancoDTO nuevoBanco, @PathVariable("idBanco") Long idBanco){
         Long idBancoCreado = null;
         HttpHeaders headers = new HttpHeaders();
-        if (bancoController.buscarBancoPorId(idBanco) == null){
+        if (bancoController.buscarBancoPorId(idBanco).isEmpty()){
             idBancoCreado = bancoController.guardar(nuevoBanco);
             headers.add("Location","/api/v1/banco/"+idBancoCreado);
             return  new  ResponseEntity<>(headers, HttpStatus.CREATED);
